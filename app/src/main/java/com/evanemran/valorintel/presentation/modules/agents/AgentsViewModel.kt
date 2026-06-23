@@ -1,6 +1,5 @@
-package com.evanemran.valorintel.presentation.modules.home
+package com.evanemran.valorintel.presentation.modules.agents
 
-import androidx.compose.runtime.MutableState
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
@@ -15,18 +14,18 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 
-data class HomeUiState(
+data class AgentsUiState(
     val isLoading: Boolean = false,
     val isRefreshing: Boolean = false,
     val agents: List<Agent> = emptyList(),
     val error: String? = null
 )
 
-class HomeViewModel(private val agentsUseCase: AgentsUseCase) : ViewModel() {
+class AgentsViewModel(private val agentsUseCase: AgentsUseCase) : ViewModel() {
 
-    private val _states = MutableStateFlow(HomeUiState(isLoading = true))
+    private val _states = MutableStateFlow(AgentsUiState(isLoading = true))
 
-    val state: StateFlow<HomeUiState> = _states.asStateFlow()
+    val state: StateFlow<AgentsUiState> = _states.asStateFlow()
 
     init {
         loadAgents()
@@ -48,12 +47,12 @@ class HomeViewModel(private val agentsUseCase: AgentsUseCase) : ViewModel() {
             try {
                 val agents = agentsUseCase(isPlayableCharacter = true)
                 _states.update {
-                    HomeUiState(agents = agents)
+                    AgentsUiState(agents = agents)
                 }
             }
             catch (e: Exception) {
                 _states.update {
-                    HomeUiState(error = e.message)
+                    AgentsUiState(error = e.message)
                 }
             }
         }
@@ -62,7 +61,7 @@ class HomeViewModel(private val agentsUseCase: AgentsUseCase) : ViewModel() {
     companion object {
         val Factory = viewModelFactory {
             initializer {
-                HomeViewModel(ServiceLocator.agentsUseCase)
+                AgentsViewModel(ServiceLocator.agentsUseCase)
             }
         }
     }

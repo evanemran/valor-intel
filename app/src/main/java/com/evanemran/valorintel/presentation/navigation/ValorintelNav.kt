@@ -1,11 +1,10 @@
 package com.evanemran.valorintel.presentation.navigation
 
-import android.net.Uri
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.evanemran.valorintel.presentation.modules.home.HomeScreen
+import com.evanemran.valorintel.presentation.modules.agents.AgentsScreen
 
 object Routes {
     const val HOME = "home"
@@ -19,7 +18,7 @@ fun ValorintelNav() {
 
     NavHost(navController = navController, startDestination = Routes.HOME) {
         composable(Routes.HOME) {
-            HomeScreen(
+            AgentsScreen(
                 onAgentClick = { url ->
                 },
             )

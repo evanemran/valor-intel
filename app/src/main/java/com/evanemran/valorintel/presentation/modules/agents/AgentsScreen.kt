@@ -1,6 +1,5 @@
-package com.evanemran.valorintel.presentation.modules.home
+package com.evanemran.valorintel.presentation.modules.agents
 
-import android.content.ClipData
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
@@ -26,7 +25,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.evanemran.valorintel.domain.models.Agent
@@ -37,9 +35,9 @@ import com.evanemran.valorintel.presentation.theme.AgentRedSurface
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen(
+fun AgentsScreen(
     onAgentClick: (Agent) -> Unit,
-    viewModel: HomeViewModel = viewModel(factory = HomeViewModel.Factory),) {
+    viewModel: AgentsViewModel = viewModel(factory = AgentsViewModel.Factory),) {
         val state by viewModel.state.collectAsStateWithLifecycle()
 
     Scaffold(
@@ -77,7 +75,7 @@ fun HomeScreen(
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun AgentsContainer(
-    state: HomeUiState,
+    state: AgentsUiState,
     onRefresh: () -> Unit,
     onAgentClick: (Agent) -> Unit
 ) {
