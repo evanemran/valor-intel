@@ -12,3 +12,5 @@ val Pink40 = Color(0xFF7D5260)
 
 val AgentRed = Color(0xFFF44336)
 val AgentRedSurface = Color(0xFFFFEBEE)
+val ValorantRed = Color(0xFFFF4655)
+val ValorantDark = Color(0xFF0F1923)
