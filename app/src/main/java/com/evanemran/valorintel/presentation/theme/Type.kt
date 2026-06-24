@@ -1,34 +1,32 @@
 package com.evanemran.valorintel.presentation.theme
 
 import androidx.compose.material3.Typography
-import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.sp
+import com.evanemran.valorintel.R
 
-// Set of Material typography styles to start with
+// Custom app font. File located at: app/src/main/res/font/valorant_font.ttf
+val CustomFontFamily = FontFamily(
+    Font(R.font.valorant_font)
+)
+
+private val DefaultTypography = Typography()
+
+// Apply the custom font to every Material typography style so the whole app uses it.
 val Typography = Typography(
-    bodyLarge = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 16.sp,
-        lineHeight = 24.sp,
-        letterSpacing = 0.5.sp
-    )
-    /* Other default text styles to override
-    titleLarge = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 22.sp,
-        lineHeight = 28.sp,
-        letterSpacing = 0.sp
-    ),
-    labelSmall = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Medium,
-        fontSize = 11.sp,
-        lineHeight = 16.sp,
-        letterSpacing = 0.5.sp
-    )
-    */
+    displayLarge = DefaultTypography.displayLarge.copy(fontFamily = CustomFontFamily),
+    displayMedium = DefaultTypography.displayMedium.copy(fontFamily = CustomFontFamily),
+    displaySmall = DefaultTypography.displaySmall.copy(fontFamily = CustomFontFamily),
+    headlineLarge = DefaultTypography.headlineLarge.copy(fontFamily = CustomFontFamily),
+    headlineMedium = DefaultTypography.headlineMedium.copy(fontFamily = CustomFontFamily),
+    headlineSmall = DefaultTypography.headlineSmall.copy(fontFamily = CustomFontFamily),
+    titleLarge = DefaultTypography.titleLarge.copy(fontFamily = CustomFontFamily),
+    titleMedium = DefaultTypography.titleMedium.copy(fontFamily = CustomFontFamily),
+    titleSmall = DefaultTypography.titleSmall.copy(fontFamily = CustomFontFamily),
+    bodyLarge = DefaultTypography.bodyLarge.copy(fontFamily = CustomFontFamily),
+    bodyMedium = DefaultTypography.bodyMedium.copy(fontFamily = CustomFontFamily),
+    bodySmall = DefaultTypography.bodySmall.copy(fontFamily = CustomFontFamily),
+    labelLarge = DefaultTypography.labelLarge.copy(fontFamily = CustomFontFamily),
+    labelMedium = DefaultTypography.labelMedium.copy(fontFamily = CustomFontFamily),
+    labelSmall = DefaultTypography.labelSmall.copy(fontFamily = CustomFontFamily),
 )
