@@ -6,7 +6,7 @@ data class Agent(
     val background: String? = null,
     val backgroundGradientColors: List<String?>? = null,
     val bustPortrait: String? = null,
-    val characterTags: Any? = null,
+    val characterTags: List<String?>? = null,
     val description: String? = null,
     val developerName: String? = null,
     val displayIcon: String? = null,
@@ -14,16 +14,16 @@ data class Agent(
     val displayName: String? = null,
     val fullPortrait: String? = null,
     val fullPortraitV2: String? = null,
-    val homeScreenPromoTileImage: Any? = null,
+    val homeScreenPromoTileImage: String? = null,
     val isAvailableForTest: Boolean? = null,
     val isBaseContent: Boolean? = null,
     val isFullPortraitRightFacing: Boolean? = null,
     val isPlayableCharacter: Boolean? = null,
     val killfeedPortrait: String? = null,
     val minimapPortrait: String? = null,
-    val recruitmentData: Any? = null,
+    val recruitmentData: RecruitmentData? = null,
     val releaseDate: String? = null,
     val role: Role? = null,
     val uuid: String? = null,
-    val voiceLine: Any? = null
+    val voiceLine: String? = null
 )
